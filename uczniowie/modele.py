@@ -15,17 +15,17 @@ class BazaModel(Model):
         database = baza
 
 
-class Uczen(BazaModel):
-    imie = CharField(max_length=18)
-    nazwisko = CharField(max_length=18)
-    plec = IntegerField()
-    id_klasa = ForeignKey(klasa, related_name="uczniowie")
-
-
 class Klasa(BazaModel):
     klasa = CharField(max_length=2)  # nie pozwalamy żeby nie było nazwy
     roknaboru = IntegerField(default=0)
     rokmatury = IntegerField(default=0)
+
+
+class Uczen(BazaModel):
+    imie = CharField(max_length=18)
+    nazwisko = CharField(max_length=18)
+    plec = IntegerField()
+    klasa = ForeignKeyField(Klasa, related_name="uczniowie")
 
 
 if __name__ == '__main__':
