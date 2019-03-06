@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# quiz-orm/views.py
+# views.py
 
 from flask import Flask
 from flask import render_template, request, redirect, url_for, abort, flash

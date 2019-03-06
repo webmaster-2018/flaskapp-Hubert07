@@ -9,14 +9,14 @@ baza_plik = 'uczniowie.db'
 baza = SqliteDatabase(baza_plik)  # instancja bazy
 
 
-### MODELE #
+# MODELE #
 class BazaModel(Model):
     class Meta:
         database = baza
 
 
 class Klasa(BazaModel):
-    klasa = CharField(max_length=2)  # nie pozwalamy żeby nie było nazwy
+    klasa = CharField(max_length=3)
     roknaboru = IntegerField(default=0)
     rokmatury = IntegerField(default=0)
 
